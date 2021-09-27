@@ -1,0 +1,17 @@
+#!/bin/sh
+# VARIABLES
+IMG_NAME="linkis"
+HOST_PREFIX="cluster"
+NETWORK_NAME=$HOST_PREFIX
+
+# START HADOOP MASTER
+LINKIS_NAME="$HOST_PREFIX"-linkis
+docker run --name $LINKIS_NAME -h $LINKIS_NAME --net=$NETWORK_NAME \
+		-p  20303:20303  -p 9001:9001 -p 9101:9101 \
+		-p  9102:9102 -p 9103:9103\
+		-p  9104:9104 -p 9105:9105\
+		-p  9108:9108\
+		-itd "$IMG_NAME"
+
+# START MULTI-NODES CLUSTER
+docker exec -it $LINKIS_NAME /bin/bash

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+	<!-- jdbc-url -->
+	<property>
+		<name>javax.jdo.option.ConnectionURL</name>
+		<value>jdbc:mysql://10.211.55.24:3306/hive?createDatabaseIfNotExist=true&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false</value>
+	</property>
+	<!-- jdbc-driver -->
+	<property>
+		<name>javax.jdo.option.ConnectionDriverName</name>
+		<value>com.mysql.jdbc.Driver</value>
+	</property>
+	<!-- 数据库用户名 -->
+	<property>
+		<name>javax.jdo.option.ConnectionUserName</name>
+		<value>root</value>
+	</property>
+	<!-- 数据密码-->
+	<property>
+		<name>javax.jdo.option.ConnectionPassword</name>
+		<value>123456</value>
+	</property>
+	<property>
+		<name>datanucleus.readOnlyDatastore</name>
+		<value>false</value>
+	</property>
+	<property>
+		<name>datanucleus.fixedDatastore</name>
+		<value>false</value>
+	</property>
+	<property>
+		<name>datanucleus.autoCreateSchema</name>
+		<value>true</value>
+	</property>
+	<property>
+		<name>datanucleus.schema.autoCreateAll</name>
+		<value>true</value>
+	</property>
+	<property>
+		<name>datanucleus.autoCreateTables</name>
+		<value>true</value>
+	</property>
+	<property>
+		<name>datanucleus.autoCreateColumns</name>
+		<value>true</value>
+	</property>
+	<property>
+		<name>hive.metastore.local</name>
+		<value>true</value>
+	</property>
+	<!-- 显示表的列名 -->
+	<property>
+		<name>hive.cli.print.header</name>
+		<value>true</value>
+	</property>
+	<!-- 显示数据库名称 -->
+	<property>
+		<name>hive.cli.print.current.db</name>
+		<value>true</value>
+	</property>
+	<property>
+		<name>hive.exec.local.scratchdir</name>
+		<value>/usr/local/hive</value>
+		<description>Local scratch space for Hive jobs</description>
+	</property>
+	<!-- 自定义目录start -->
+	<property>
+		<name>hive.downloaded.resources.dir</name>
+		<value>/usr/local/hive/resource/</value>
+		<description>Temporary local directory for added resources in the remote file system.</description>
+	</property>
+	<property>
+		<name>hive.querylog.location</name>
+		<value>/usr/local/hive/querylog/</value>
+		<description>Location of Hive run time structured log file</description>
+	</property>
+	<property>
+		<name>hive.server2.logging.operation.log.location</name>
+		<value>/usr/local/hive/log/</value>
+		<description>Top level directory where operation logs are stored if logging functionality is enabled</description>
+	</property>
+	<!-- 自定义目录end -->
+	<property>
+		<name>hive.server2.thrift.port</name>
+		<value>10000</value>
+	</property>
+	<!-- 权限设置 -->
+	<!-- <property>
+		<name>hive.files.umask.value</name>
+		<value>0002</value>
+		<description>The dfs.umask value for the hive created folders</description>
+	</property>
+	<property>  
+		<name>hive.metastore.authorization.storage.checks</name>  
+		<value>true</value>  
+		<description>Should the metastore do authorization checks against  
+			the underlying storage for operations like drop-partition (disallow  
+			the drop-partition if the user in question doesn't have permissions  
+			to delete the corresponding directory on the storage).</description>  
+	</property>
+	<property>  
+		<name>hive.security.authorization.enabled</name>   
+		<value>true</value>  
+		<description>Enable or disable the hive client authorization</description>  
+	</property>
+	<property>
+		<name>hive.security.authorization.createtable.owner.grants</name>
+		<value>ALL</value>
+		<description>The privileges automatically granted to the owner whenever
+			a table gets created.An example like "select,drop" will grant select
+			and drop privilege to the owner of the table</description>
+	</property>
+	<property>
+		<name>hive.users.in.admin.role</name>
+		<value>root</value>
+		<description>定义超级管理员 启动的时候会自动创建Comma separated list of users who are in admin role for bootstrapping.
+			More users can be added in ADMIN role later.</description>
+	</property>
+	<property>
+		<name>hive.security.authorization.task.factory</name>
+		<value>org.apache.hadoop.hive.ql.parse.authorization.HiveAuthorizationTaskFactoryImpl</value>
+	</property> -->
+	<property>
+        	<name>hive.execution.engine</name>
+        	<value>spark</value>
+  	</property>
+</configuration>
